@@ -1,0 +1,7 @@
+D:\GITHIB\student\student\student\bin\Debug\student.exe.config
+D:\GITHIB\student\student\student\bin\Debug\student.exe
+D:\GITHIB\student\student\student\bin\Debug\student.pdb
+D:\GITHIB\student\student\student\obj\Debug\student.csprojResolveAssemblyReference.cache
+D:\GITHIB\student\student\student\obj\Debug\student.csproj.CoreCompileInputs.cache
+D:\GITHIB\student\student\student\obj\Debug\student.exe
+D:\GITHIB\student\student\student\obj\Debug\student.pdb
