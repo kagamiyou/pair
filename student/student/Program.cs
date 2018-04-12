@@ -17,7 +17,7 @@ namespace student
             string[] zodiac = { "金牛", "", "巨蟹", "白羊", "雙魚", "雙子", "天蠍", "巨蟹", "獅子", "雙魚", "雙子", "雙子", "獅子", "雙魚", "天蠍", "天蠍", "處女", "處女", "金牛", "雙魚", "處女", "摩羯", "雙魚", "白羊", "天蠍", "處女", "雙子", "金牛", "雙子", "白羊", "白羊", "摩羯", "射手", "巨蟹", "雙魚", "獅子", "射手", "摩羯", "天蠍", "", "雙魚", "雙子", "", "雙魚", "處女", "金牛", "天秤", "水瓶", "巨蟹", "處女", "白羊", "摩羯", "水瓶", "天秤", "金牛", "天蠍", "天蠍", "處女", "", "", "摩羯", "天蠍", "雙子", "", "獅子", "天蠍", "射手", "金牛" };
             string[] bt = { "O", "其他", "O", "O", "A", "O", "A", "A", "O", "O", "A", "O", "A", "B", "O", "O", "A", "其他", "O", "O", "A", "", "B", "O", "", "O", "B", "O", "B", "B", "B", "O", "O", "AB", "O", "B", "A", "O", "O", "", "O", "A", "", "O", "O", "A", "O", "O", "其他", "B", "O", "O", "O", "A", "AB", "A", "O", "B", "AB", "", "O", "O", "O", "", "O", "A", "A", "O" };
 
-            //計算過程
+            //計算男女人數
             double boy = 0;
             double girl = 0;
 
@@ -33,14 +33,16 @@ namespace student
                 }
             }
 
+            //計算男女百分比
             double classgender = gender.Length;
             double boysrate = (boy / classgender) * 100;
             double girlssrate = (girl / classgender) * 100;
 
-
+            //計算各類血型
             double bloodA = 0;
             double bloodB = 0;
             double bloodO = 0;
+            double bloodAB = 0;
             double ELSE = 0;
 
             for (int i = 0; i < bt.Length; i++)
@@ -56,6 +58,10 @@ namespace student
                 if (bt[i] == "O")
                 {
                     bloodO++;
+                }
+                if (bt[i] == "AB")
+                {
+                    bloodAB++;
                 }
                 else
                 {
@@ -101,15 +107,17 @@ namespace student
             }
 
 
-
+            //計算血型百分比
             double total = bt.Length;
             double chanceA = 100 * (bloodA / total);
             double chanceB = 100 * (bloodB / total);
             double chanceO = 100 * (bloodO / total);
+            double chanceAB = 100 * (bloodAB / total);
 
             double name2 = 0;
             string name3 = " ";
 
+            //計算天蠍O行血的人
             for (int i = 0; i < bt.Length; i++)
             {
                 if (bt[i] == "O")
@@ -143,6 +151,7 @@ namespace student
             Console.WriteLine("3.A型人數為:" + bloodA + "百分比為:" + chanceA + "%");
             Console.WriteLine("  B型人數為:" + bloodB + "百分比為:" + chanceB + "%");
             Console.WriteLine("  O型人數為:" + bloodO + "百分比為:" + chanceO + "%");
+            Console.WriteLine("  AB型人數為:" + bloodAB + "百分比為:" + chanceAB + "%");
             Console.WriteLine("  其他血型人數為:" + ELSE + "百分比為:" + (100 - (chanceA + chanceB + chanceO)));
             Console.WriteLine("4.男生身高平均為:" + boyTotalHeight / countBoy);
             Console.WriteLine("5.女生身高平均為:" + girlTotalHeight / countGirl);
