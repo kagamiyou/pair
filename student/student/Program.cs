@@ -34,9 +34,9 @@ namespace student
             }
 
             //計算男女百分比
-            double classgender = gender.Length;
-            double boysrate = (boy / classgender) * 100;
-            double girlssrate = (girl / classgender) * 100;
+            double classGender = gender.Length;
+            double boySrate = (boy / classGender) * 100;
+            double girlSrate = (girl / classGender) * 100;
 
             //計算各類血型
             double bloodA = 0;
@@ -73,7 +73,7 @@ namespace student
             double countBoy = 0;
             double boyTotalHeight = 0;
 
-
+            //計算全部男性身高
             for (int i = 0; i < gender.Length; i++)
             {
 
@@ -88,6 +88,7 @@ namespace student
                 }
             }
 
+            //計算全部女性身高
             double girlTotalHeight = 0;
 
 
@@ -130,6 +131,7 @@ namespace student
                 }
             }
 
+            //選出最高和最矮
             double highest = -999;
             double shortest = 999;
 
@@ -146,8 +148,8 @@ namespace student
             }
 
             //顯示結果
-            Console.WriteLine("1.男生人數/百分比為" + boysrate + "%");
-            Console.WriteLine("2.女生人數/百分比為" + girlssrate + "%");
+            Console.WriteLine("1.男生人數/百分比為" + boySrate + "%");
+            Console.WriteLine("2.女生人數/百分比為" + girlSrate + "%");
             Console.WriteLine("3.A型人數為:" + bloodA + "百分比為:" + chanceA + "%");
             Console.WriteLine("  B型人數為:" + bloodB + "百分比為:" + chanceB + "%");
             Console.WriteLine("  O型人數為:" + bloodO + "百分比為:" + chanceO + "%");
