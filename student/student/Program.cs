@@ -35,15 +35,15 @@ namespace student
 
             //計算男女百分比
             double classGender = gender.Length;
-            double boySrate = (boy / classGender) * 100;
-            double girlSrate = (girl / classGender) * 100;
+            double boyPercentage = (boy / classGender) * 100;
+            double girlPercentage = (girl / classGender) * 100;
 
             //計算各類血型
             double bloodA = 0;
             double bloodB = 0;
             double bloodO = 0;
             double bloodAB = 0;
-            double ELSE = 0;
+            double other = 0;
 
             for (int i = 0; i < bt.Length; i++)
             {
@@ -65,7 +65,7 @@ namespace student
                 }
                 else
                 {
-                    ELSE++;
+                    other++;
                 }
 
             }
@@ -148,13 +148,13 @@ namespace student
             }
 
             //顯示結果
-            Console.WriteLine("1.男生人數/百分比為" + boySrate + "%");
-            Console.WriteLine("2.女生人數/百分比為" + girlSrate + "%");
+            Console.WriteLine("1.男生人數/百分比為" + boyPercentage + "%");
+            Console.WriteLine("2.女生人數/百分比為" + girlPercentage + "%");
             Console.WriteLine("3.A型人數為:" + bloodA + "百分比為:" + chanceA + "%");
             Console.WriteLine("  B型人數為:" + bloodB + "百分比為:" + chanceB + "%");
             Console.WriteLine("  O型人數為:" + bloodO + "百分比為:" + chanceO + "%");
             Console.WriteLine("  AB型人數為:" + bloodAB + "百分比為:" + chanceAB + "%");
-            Console.WriteLine("  其他血型人數為:" + ELSE + "百分比為:" + (100 - (chanceA + chanceB + chanceO)));
+            Console.WriteLine("  其他血型人數為:" + other + "百分比為:" + (100 - (chanceA + chanceB + chanceO)));
             Console.WriteLine("4.男生身高平均為:" + boyTotalHeight / countBoy);
             Console.WriteLine("5.女生身高平均為:" + girlTotalHeight / countGirl);
             Console.WriteLine("6.全部身高平均為:" + (boyTotalHeight + girlTotalHeight) / (countBoy + countGirl));
